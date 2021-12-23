@@ -13,4 +13,10 @@ protected $fillable = [
 'nazivZanra'
 ];
 
+
+public function films(){
+    return $this->hasMany(Film::class);
+}
+
+
 }

@@ -13,4 +13,11 @@ class Clanstvo extends Model
         'nazivClanstva'
     ];
 
+
+    public function clans(){
+        return $this->hasMany(Clan::class);
+    }
+
+
+
 }

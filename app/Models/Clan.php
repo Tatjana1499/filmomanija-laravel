@@ -16,4 +16,16 @@ class Clan extends Model
     ];
 
 
+
+    public function clanstvoID(){
+        return $this->belongsTo(Clanstvo::class);
+    }
+
+
+    public function iznajmljivanjes(){
+        return $this->hasMany(Iznajmljivanje::class);
+    }
+
+
+
 }
