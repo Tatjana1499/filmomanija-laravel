@@ -14,7 +14,7 @@ class CreateClanstvosTable extends Migration
     public function up()
     {
         Schema::create('clanstvos', function (Blueprint $table) {
-            $table->id('clanstvoID');
+            $table->id();
             $table->string('nazivClanstva');
             $table->timestamps();
         });

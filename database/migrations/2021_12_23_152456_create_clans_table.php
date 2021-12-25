@@ -14,7 +14,7 @@ class CreateClansTable extends Migration
     public function up()
     {
         Schema::create('clans', function (Blueprint $table) {
-            $table->id('clanID');
+            $table->id();
             $table->string('imeClana');
             $table->string('prezimeClana');
             $table->integer('clanstvoID');

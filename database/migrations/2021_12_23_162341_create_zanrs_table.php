@@ -14,7 +14,7 @@ class CreateZanrsTable extends Migration
     public function up()
     {
         Schema::create('zanrs', function (Blueprint $table) {
-            $table->id('zanrID');
+            $table->id();
             $table->string('nazivZanra');
             $table->timestamps();
         });

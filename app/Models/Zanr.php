@@ -9,14 +9,10 @@ class Zanr extends Model
 {
     use HasFactory;
 
-protected $fillable = [
-'nazivZanra'
-];
-
-
-public function films(){
-    return $this->hasMany(Film::class);
-}
-
-
+    protected $fillable = [
+        'nazivZanra'
+    ];
+    public function films(){
+        return $this->hasMany(Film::class);
+    }
 }

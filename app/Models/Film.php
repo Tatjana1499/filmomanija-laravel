@@ -14,21 +14,13 @@ class Film extends Model
         'rediteljID',
         'zanrID'
     ];
-
-
     public function rediteljID(){
         return $this->belongsTo(Reditelj::class);
     }
-
-
     public function zanrID(){
         return $this->belongsTo(Zanr::class);
     }
-
-
     public function iznajmljivanjes(){
         return $this->hasMany(Iznajmljivanje::class);
     }
-
-
 }

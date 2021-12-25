@@ -14,14 +14,7 @@ class Reditelj extends Model
         'prezimeReditelja',
         'drzavaReditelja'
     ];
-
-
     public function films(){
         return $this->hasMany(Film::class);
     }
-
-
-
-
-
 }

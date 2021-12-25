@@ -27,8 +27,8 @@ class ChangeTypeRediteljIDToForeignId extends Migration
     public function down()
     {
         Schema::table('films', function (Blueprint $table) {
-            $table->string('rediteljID')->change();
-            $table->string('zanrID')->change();
+            $table->integer('rediteljID')->change();
+            $table->integer('zanrID')->change();
         });
     }
 }

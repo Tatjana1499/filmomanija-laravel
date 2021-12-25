@@ -9,14 +9,10 @@ class Iznajmljivanje extends Model
 {
     use HasFactory;
 
-
     public function filmID(){
         return $this->belongsTo(Film::class);
     }
-
     public function clanID(){
         return $this->belongsTo(Clan::class);
     }
-
-
 }

@@ -14,7 +14,7 @@ class CreateRediteljsTable extends Migration
     public function up()
     {
         Schema::create('rediteljs', function (Blueprint $table) {
-            $table->id('rediteljID');
+            $table->id();
             $table->string('imeReditelja');
             $table->string('prezimeReditelja');
             $table->string('drzavaReditelja');

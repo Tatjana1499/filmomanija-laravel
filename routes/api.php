@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ClanController;
+use App\Http\Controllers\Clan_Controller;
 use App\Http\Controllers\ClanstvoController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\RediteljController;
@@ -28,13 +28,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Route::get('/users', [UserController::class,'index']);
 //Route::get('/users/{id}', [UserController::class,'show']);
-Route::resource('users', UserController::class);
-Route::resource('clanovi', ClanController::class);
-Route::resource('clanstvo', ClanstvoController::class);
-Route::resource('filmovi', FilmController::class);
-Route::resource('iznajmljivanje', IznajmljivanjeController::class);
-Route::resource('reditelji', RediteljController::class);
-Route::resource('zanrovi', ZanrController::class);
+
+Route::resource('clanovi', Clan_Controller::class);
+
+Route::get('/reditelji', [RediteljController::class,'index']);
+Route::get('/reditelji/{id}', [RediteljController::class,'show']);
+
+Route::get('/filmovi', [FilmController::class,'index']);
+Route::get('/filmovi/{id}', [FilmController::class,'show']);
+
+Route::get('/zanrovi', [ZanrController::class,'index']);
+Route::get('/zanrovi/{id}', [ZanrController::class,'show']);
+
+Route::get('/clanstva', [ClanstvoController::class,'index']);
+Route::get('/clanstva/{id}', [ClanstvoController::class,'show']);
 
 
 

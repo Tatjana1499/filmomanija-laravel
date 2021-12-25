@@ -26,7 +26,7 @@ class ChangeTypeClanstvoIDToForeignId extends Migration
     public function down()
     {
         Schema::table('clans', function (Blueprint $table) {
-            $table->string('clanstvoID')->change();
+            $table->integer('clanstvoID')->change();
         });
     }
 }

@@ -12,12 +12,7 @@ class Clanstvo extends Model
     protected $fillable = [
         'nazivClanstva'
     ];
-
-
     public function clans(){
         return $this->hasMany(Clan::class);
     }
-
-
-
 }
