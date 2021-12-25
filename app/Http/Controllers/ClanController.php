@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\ClanResource;
 
 
-class Clan_Controller extends Controller
+class ClanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class Clan_Controller extends Controller
     public function index()
     {
         $clanovi = Clan::all();
-        return $clanovi;
+        return ClanResource::collection($clanovi);
     }
 
     /**
@@ -50,6 +50,7 @@ class Clan_Controller extends Controller
     public function show(Clan $clan)
     {
         return new ClanResource($clan);
+        
     }
 
     /**

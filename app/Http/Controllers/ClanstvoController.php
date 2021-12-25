@@ -17,7 +17,7 @@ class ClanstvoController extends Controller
     public function index()
     {
         $clanstva = Clanstvo::all();
-        return $clanstva;
+        return ClanstvoResource::collection($clanstva);
     }
 
     /**

@@ -17,7 +17,7 @@ class FilmController extends Controller
     public function index()
     {
         $filmovi = Film::all();
-        return  $filmovi;
+        return FilmResource::collection($filmovi);
     }
 
     /**

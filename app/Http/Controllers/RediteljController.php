@@ -17,7 +17,7 @@ class RediteljController extends Controller
     public function index()
     {
         $reditelji = Reditelj::all();
-        return $reditelji;
+        return RediteljResource::collection($reditelji);
     }
 
     /**

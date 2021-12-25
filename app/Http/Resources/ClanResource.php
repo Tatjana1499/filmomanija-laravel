@@ -14,6 +14,11 @@ class ClanResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+      //  return parent::toArray($request);
+      return[
+          'id' => $this->resource->id,
+          'imeClana' => $this->resource->imeClana,
+          'prezimeClana' => $this->resource->prezimeClana
+      ];
     }
 }

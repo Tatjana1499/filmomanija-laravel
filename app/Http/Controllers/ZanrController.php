@@ -17,7 +17,7 @@ class ZanrController extends Controller
     public function index()
     {
         $zanrovi = Zanr::all();
-        return  $zanrovi;
+        return  ZanrResource::collection($zanrovi);
     }
 
     /**
