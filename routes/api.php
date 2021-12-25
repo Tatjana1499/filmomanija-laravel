@@ -1,15 +1,21 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ClanController;
-use App\Http\Controllers\ClanstvoController;
-use App\Http\Controllers\FilmController;
-use App\Http\Controllers\RediteljController;
-use App\Http\Controllers\ZanrController;
-use App\Http\Controllers\IznajmljivanjeController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\Cl_Controller;
+use App\Http\Controllers\Rd_Controller;
+use App\Http\Controllers\Fm_Controller;
+use App\Http\Controllers\Zn_Controller;
+use App\Http\Controllers\Cs_Controller;
+
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,28 +32,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::get('/users', [UserController::class,'index']);
-//Route::get('/users/{id}', [UserController::class,'show']);
-
-//Route::resource('clanovi', ClanController::class);
-
-//Route::get('/reditelji', [RediteljController::class,'index']);
-//Route::get('/reditelji/{id}', [RediteljController::class,'show']);
-Route::resource('reditelji', RediteljController::class);
+Route::resource('users', TestController::class);
+Route::resource('clans', Cl_Controller::class);
+Route::resource('rediteljs', Rd_Controller::class);
+Route::resource('films', Fm_Controller::class);
+Route::resource('zanrs', Zn_Controller::class);
+Route::resource('clanstvos', Cs_Controller::class);
 
 
-//Route::get('/filmovi', [FilmController::class,'index']);
-//Route::get('/filmovi/{id}', [FilmController::class,'show']);
-Route::resource('filmovi', FilmController::class);
 
 
-//Route::get('/zanrovi', [ZanrController::class,'index']);
-//Route::get('/zanrovi/{id}', [ZanrController::class,'show']);
-Route::resource('zanrovi', ZanrController::class);
 
 
-//Route::get('/clanstva', [ClanstvoController::class,'index']);
-//Route::get('/clanstva/{id}', [ClanstvoController::class,'show']);
-Route::resource('clanstva', ClanstvoController::class);
-
+//Route::get('/clans', [Cl_Controller::class,'index']);
 

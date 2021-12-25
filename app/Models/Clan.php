@@ -13,8 +13,8 @@ class Clan extends Model
         'prezimeClana',
         'clanstvoID'
     ];
-    public function clanstvoID(){
-        return $this->belongsTo(Clanstvo::class);
+    public function vrstaClanstva(){
+        return $this->belongsTo(Clanstvo::class, 'clanstvoID');
     }
     public function iznajmljivanjes(){
         return $this->hasMany(Iznajmljivanje::class);

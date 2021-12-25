@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FilmResource extends JsonResource
+class Cs_Resource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -12,12 +12,14 @@ class FilmResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+    public static $wrap = 'clanstvo';
+
     public function toArray($request)
     {
-       // return parent::toArray($request);
-       return[
-        'id' => $this->resource->id,
-        'nazivFilma' => $this->resource->nazivFilma
-    ];
+        //return parent::toArray($request);
+        return[
+            'id'=>$this->resource->id,
+            'nazivClanstva'=>$this->resource->nazivClanstva,
+        ];
     }
 }
