@@ -9,7 +9,7 @@ use App\Http\Controllers\Rd_Controller;
 use App\Http\Controllers\Fm_Controller;
 use App\Http\Controllers\Zn_Controller;
 use App\Http\Controllers\Cs_Controller;
-use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\api\Auth_Controller;
 
 
 
@@ -34,16 +34,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 /*
 Route::resource('users', TestController::class);
-Route::resource('clans', Cl_Controller::class);
+//Route::resource('clans', Cl_Controller::class);
 Route::resource('rediteljs', Rd_Controller::class);
 Route::resource('films', Fm_Controller::class);
 Route::resource('zanrs', Zn_Controller::class);
 Route::resource('clanstvos', Cs_Controller::class);
 */
-Route::post('/register', [AuthController::class, 'register']);
 
 
+Route::post('/login', [Auth_Controller::class, 'login']);
+
+Route::post('/register', [Auth_Controller::class, 'register']);
 
 
-//Route::get('/clans', [Cl_Controller::class,'index']);
+Route::group(['middleware' => ['auth:sanctum']], function () {
 
+    Route::get('/profile', function (Request $request) { return auth()->user(); });
+
+    Route::resource('clans', Cl_Controller::class)->only(['update', 'store', 'destroy']);
+
+    Route::post('/logout', [Auth_Controller::class, 'logout']);
+});
+
+Route::resource('clans', Cl_Controller::class)->only(['index']);
