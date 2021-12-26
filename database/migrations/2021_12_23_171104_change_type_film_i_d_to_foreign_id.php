@@ -30,6 +30,7 @@ class ChangeTypeFilmIDToForeignId extends Migration
         Schema::table('iznajmljivanjes', function (Blueprint $table) {
             $table->string('clanID')->change();
             $table->string('filmID')->change();
+            $table->integer('iznajmljivanjeID');
         });
     }
 }

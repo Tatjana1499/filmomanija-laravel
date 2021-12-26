@@ -22,6 +22,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        Zanr::truncate();
+        User::truncate();
+        Clanstvo::truncate();
+        Clan::truncate();
+        Reditelj::truncate();
+        Iznajmljivanje::truncate();
+        Film::truncate();
+
         $user = User::factory()->create();
 
         $zanr1 = Zanr::create(['nazivZanra'=>"Akcija"]);
