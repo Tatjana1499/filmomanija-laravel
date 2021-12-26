@@ -9,6 +9,7 @@ use App\Http\Resources\Cl_Collection;
 use Illuminate\Support\Facades\Validator;
 
 
+
 class Cl_Controller extends Controller
 {
     public function index()
@@ -28,15 +29,16 @@ class Cl_Controller extends Controller
             'prezimeClana' => 'required|string|max:100',
             'clanstvoID' => 'required'  
         ]);
-        if ($validator->fails())
-            return response()->json($validator->errors()); 
+        if ($validator->fails()){
+            return response()->json('Usao je u if validator'); //$validator->errors()
+        }
         $clan = Clan::create([
             'imeClana' => $request->imeClana,
             'prezimeClana' => $request->prezimeClana,
             'clanstvoID' => $request->clanstvoID
         ]);
         return response()->json(['Clan je kreiran.', new Cl_Resource($clan)]);
-    }
+    } 
     public function update(Request $request, Clan $clan)
     {
         $validator = Validator::make($request->all(), [

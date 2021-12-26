@@ -42,10 +42,9 @@ Route::resource('clanstvos', Cs_Controller::class);
 */
 
 
-Route::post('/login', [Auth_Controller::class, 'login']);
-
 Route::post('/register', [Auth_Controller::class, 'register']);
-
+Route::post('/login', [Auth_Controller::class, 'login']);
+Route::resource('clans', Cl_Controller::class)->only(['index']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
@@ -53,7 +52,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::resource('clans', Cl_Controller::class)->only(['update', 'store', 'destroy']);
 
+
     Route::post('/logout', [Auth_Controller::class, 'logout']);
 });
-
-Route::resource('clans', Cl_Controller::class)->only(['index']);
