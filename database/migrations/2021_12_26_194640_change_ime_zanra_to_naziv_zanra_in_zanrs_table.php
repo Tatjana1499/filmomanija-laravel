@@ -13,7 +13,7 @@ class ChangeImeZanraToNazivZanraInZanrsTable extends Migration
      */
     public function up()
     {
-        Schema::table('naziv_zanra_in_zanrs', function (Blueprint $table) {
+        Schema::table('zanrs', function (Blueprint $table) {
             $table->renameColumn('imeZanra','nazivZanra');
         });
     }
@@ -25,7 +25,7 @@ class ChangeImeZanraToNazivZanraInZanrsTable extends Migration
      */
     public function down()
     {
-        Schema::table('naziv_zanra_in_zanrs', function (Blueprint $table) {
+        Schema::table('zanrs', function (Blueprint $table) {
             $table->renameColumn('nazivZanra','imeZanra');
         });
     }

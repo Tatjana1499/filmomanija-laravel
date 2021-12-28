@@ -22,7 +22,6 @@ use App\Http\Controllers\api\Auth_Controller;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) { return $request->user(); });
-
 /*
 Route::resource('users', TestController::class);
 Route::resource('clans', Cl_Controller::class);
@@ -31,7 +30,7 @@ Route::resource('films', Fm_Controller::class);
 Route::resource('zanrs', Zn_Controller::class);
 Route::resource('clanstvos', Cs_Controller::class);
 */
-
+/*
 Route::post('/register', [Auth_Controller::class, 'register']);
 Route::post('/login', [Auth_Controller::class, 'login']);
 Route::resource('clans', Cl_Controller::class)->only(['index']);
@@ -44,3 +43,4 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post('/logout', [Auth_Controller::class, 'logout']);
 });
+*/

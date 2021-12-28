@@ -15,7 +15,7 @@ class CreateZanrsTable extends Migration
     {
         Schema::create('zanrs', function (Blueprint $table) {
             $table->id();
-            $table->string('nazivZanra');
+            $table->string('imeZanra');
             $table->timestamps();
         });
     }
